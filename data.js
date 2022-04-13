@@ -1,8 +1,8 @@
 export const home = {
-    domain: 'jayhawk.github.io',
-    name: 'Anubhav',
+    domain: 'shajmanfaiz.github.io',
+    name: 'Shajman Faiz',
     subtitle: 'A Freelance Web Developer from India.',
-    email: 'anubhavthrilling24@gmail.com',
+    email: 'shajmanfaiz@gmail.com',
     resumeLink:
         'https://drive.google.com/file/d/1sqxhKQnX9vD1Q41R1QqjCUadxBZlfTJ-/view?usp=sharing',
     desc: 'A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs and some other cool libraries and frameworks.'
@@ -10,14 +10,14 @@ export const home = {
 
 export const socials = {
     // Only usernames.
-    twitter: 'jayh4wk',
-    github: 'jayhawk24',
-    instagram: '__jayhawk__'
+    twitter: '',
+    github: 'shajmanfaiz',
+    instagram: ''
 };
 
 export const about = {
     aboutMe:
-        '🙏 Namaste, I am Anubhav Gupta from Varanasi, India I am a Full Stack Developer at Gigwalla. Apart from coding, there are a lot of activities I love to do like...',
+        'Hello, I'\m Shajman Faiz',
     hobbies: ['Basketball', 'Chess', 'Hiking', 'Swimming'],
     quote: 'Write code that changes Lives...',
     skills: [
@@ -26,21 +26,18 @@ export const about = {
         'redux',
         'python',
         'bash',
-        'cplusplus',
         'css3',
         'sass',
         'typescript',
         'docker',
-        'django',
         'html5',
         'git',
         'javascript',
         'jquery',
         'mongodb',
         'nodejs',
-        'php'
     ],
-    tools: ['github', 'photoshop', 'vim', 'visualstudio', 'linux']
+    tools: ['github', 'visualstudio', 'linux']
 };
 
 export const projects = [
