@@ -45,36 +45,42 @@ export const projects = [
         title: 'V80 Stocks',
         imgSrc: 'assets/v80.jpg',
         desc: "List of stocks below 200 DMA which are in Vivek Singhal's v40 and v40 next stocks list.",
-        link: 'https://github.com/jayhawk24/v80'
+        link: 'https://github.com/jayhawk24/v80',
+        hostedUrl:"https://google.com"
     },
     {
         title: 'E Store 24',
         imgSrc: 'assets/estore.png',
         desc: 'The website resembles a real store and you can add products to your cart and pay for them.',
-        link: 'https://github.com/jayhawk24/E-store'
+        link: 'https://github.com/jayhawk24/E-store',
+        hostedUrl:"https://google.com"
     },
     {
         title: 'Blood Bank',
         imgSrc: 'assets/donation.jpg',
         desc: 'Web application for hospitals to manage their blood bank and users who need blood. Made with PHP and MySQL.',
-        link: 'https://github.com/jayhawk24/blood_bank'
+        link: 'https://github.com/jayhawk24/blood_bank',
+        hostedUrl:"https://google.com"
     },
     {
         title: 'Ora Studio',
         imgSrc: 'assets/orastudio.png',
         desc: 'Architect Organisation Website. It is astatic website but with a great userinterface and you can check it out.',
-        link: 'https://github.com/jayhawk24/orastudio'
+        link: 'https://github.com/jayhawk24/orastudio',
+        hostedUrl:"https://google.com"
     },
     {
         title: 'Zen Social',
         imgSrc: 'assets/zensocial.png',
         desc: 'Social App made with django. You can post your thoughts and ideas anonymously and also create groups and post there.',
-        link: 'https://github.com/jayhawk24/zensocial'
+        link: 'https://github.com/jayhawk24/zensocial',
+        hostedUrl:"https://google.com"
     },
     {
         title: 'Take Turns',
         imgSrc: 'assets/takeTurns.png',
         desc: "Easy Friendy Management, register your roommates, and it will simply show who's turn it is to carry out a task job.",
-        link: 'https://github.com/jayhawk24/take-turns'
+        link: 'https://github.com/jayhawk24/take-turns',
+        hostedUrl:"https://google.com"
     }
 ];

@@ -24,13 +24,14 @@ export default function Projects() {
                 showArrows={isWide}
             >
                 {projects.map((project) => {
-                    const { title, imgSrc, desc, link } = project;
+                    const { title, imgSrc, desc, link ,hostedUrl} = project;
                     return (
                         <Card
                             title={title}
                             imgSrc={imgSrc}
                             desc={desc}
                             link={link}
+                            hostedUrl={hostedUrl}
                         />
                     );
                 })}
