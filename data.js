@@ -17,7 +17,7 @@ export const socials = {
 
 export const about = {
     aboutMe:
-        'Hello, I'\m Shajman Faiz',
+        "Hello, I'm Shajman Faiz",
     hobbies: ['Basketball', 'Chess', 'Hiking', 'Swimming'],
     quote: 'Write code that changes Lives...',
     skills: [
