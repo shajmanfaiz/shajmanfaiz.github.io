@@ -1,0 +1,188 @@
+{
+  "name": "Shajman Faiz",
+  "position": "Full Stack Web Developer | Mechanical Engineer",
+  "contactInformation": "+966 54 116 8419",
+  "email": "shajmanfaiz@gmail.com",
+  "address": "Riyadh, KSA",
+  "domain": "shajmanfaiz.github.io",
+  "resumeLinkWeb": "https://drive.google.com/uc?export=download&id=1EvqgNigVQWsjB6wcqO52u4xzCU36pEjp",
+  "resumeLinkMechCred": "https://drive.google.com/uc?export=download&id=1xb4ucTf3K-F2w7k8UJasABJPKVzJLGUV",
+  "resumeLink": "  https://drive.google.com/uc?export=download&id=1xb4ucTf3K-F2w7k8UJasABJPKVzJLGUV",
+  "greeting": "Hello, I'm",
+  "contactButtonText": "CONTACT ME",
+  "resumeButtonText": "View Resume",
+  "aboutTitle": "Know Who I Am",
+  "technicalSkillsTitle": "Technical Skillset",
+  "toolsTitle": "Tools I use",
+  "projectsTitle": "My Recent Works",
+  "projectsSubtitle": "Here are a few projects I've worked on recently...",
+  "navLinks": [
+    {
+      "title": "Home",
+      "path": "#hero"
+    },
+    {
+      "title": "About",
+      "path": "#about"
+    },
+    {
+      "title": "Projects",
+      "path": "#projects"
+    },
+    {
+      "title": "Contact",
+      "path": "#contact"
+    }
+  ],
+  "socialMedia": [
+    {
+      "socialMedia": "Github",
+      "link": "https://github.com/shajmanfaiz",
+      "icon": "fab fa-github"
+    },
+    {
+      "socialMedia": "LinkedIn",
+      "link": "https://linkedin.com/in/shajmanfaiz/",
+      "icon": "fab fa-linkedin-in"
+    },
+    {
+      "socialMedia": "Website",
+      "link": "https://shajmanfaiz.github.io/",
+      "icon": "fas fa-globe"
+    }
+  ],
+  "summary": "Full Stack Web Developer experienced in React, Next.js, Python, and FastAPI. I enjoy building clean, reliable web applications and automating workflows using Python. My background in Mechanical Engineering and coating inspection helps me approach problems with structured thinking. Currently improving my backend skills and exploring automation and AI-based development.",
+  "education": [
+    {
+      "school": "Shree Devi Institute of Engineering (VTU)",
+      "degree": "Bachelor of Engineering in Mechanical",
+      "startYear": "2013-06-01",
+      "endYear": "2018-06-01"
+    },
+    {
+      "school": "Apsara Public School, Kasaragod",
+      "degree": "12th Grade",
+      "startYear": "2012-06-01",
+      "endYear": "2013-03-01"
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "Iotics Middle East, Dubai",
+      "position": "Web Developer (Remote)",
+      "description": "A software solutions provider delivering modern web and mobile applications across the GCC.",
+      "keyAchievements": "Migrated legacy websites to React/Next.js improving performance by 40%. Built responsive and accessible UIs with clean component architecture. Integrated APIs, handled deployment pipelines, and automated workflows using GitHub Actions. Followed Agile processes including sprints and code reviews.",
+      "startYear": "2020-01-01",
+      "endYear": "2025-03-01"
+    },
+    {
+      "company": "Poly Coat Industries, Aluva",
+      "position": "Coating Operations Assistant Trainee",
+      "description": "Supported surface preparation and coating workflows, ensuring compliance with industrial standards.",
+      "keyAchievements": "Helped streamline daily activities and supported quality checks during coating operations.",
+      "startYear": "2025-01-01",
+      "endYear": "2025-03-15"
+    }
+  ],
+  "certifications": [
+    "AMPP Coatings Inspector Program Level 1",
+    "QCI Internal Auditor for IMS"
+  ],
+  "projects": [
+    {
+      "title": "GitHub Portfolio",
+      "imgSrc": "assets/v80.jpg",
+      "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
+      "link": "https://shajmanfaiz.github.io",
+      "hostedUrl": "https://shajmanfaiz.github.io"
+    },
+    {
+      "title": "Company Website Revamp (Iotics)",
+      "imgSrc": "assets/estore.png",
+      "description": "Revamped the official Iotics website using Next.js with optimized images, better routing, improved SEO, and faster load times.",
+      "link": "https://www.iotics.me",
+      "hostedUrl": "https://www.iotics.me"
+    },
+    {
+      "title": "Sammach Restaurant",
+      "imgSrc": "assets/donation.jpg",
+      "description": "Developed a modern landing page for Sammach Restaurant under the Binhendi Group.",
+      "link": "https://binhendi.com/brands/sammach/",
+      "hostedUrl": "https://binhendi.com/brands/sammach/"
+    },
+    {
+      "title": "GitHub Portfolio",
+      "imgSrc": "assets/v80.jpg",
+      "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
+      "link": "https://shajmanfaiz.github.io",
+      "hostedUrl": "https://shajmanfaiz.github.io"
+    },
+    {
+      "title": "Company Website Revamp (Iotics)",
+      "imgSrc": "assets/estore.png",
+      "description": "Revamped the official Iotics website using Next.js with optimized images, better routing, improved SEO, and faster load times.",
+      "link": "https://www.iotics.me",
+      "hostedUrl": "https://www.iotics.me"
+    },
+    {
+      "title": "Sammach Restaurant",
+      "imgSrc": "assets/donation.jpg",
+      "description": "Developed a modern landing page for Sammach Restaurant under the Binhendi Group.",
+      "link": "https://binhendi.com/brands/sammach/",
+      "hostedUrl": "https://binhendi.com/brands/sammach/"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Web Development & Tools",
+      "skills": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "API Integration",
+        "RESTful APIs",
+        "Git & GitHub",
+        "CI/CD (GitHub Actions, Vercel, Netlify)",
+        "Docker (Basic)",
+        "Automation Scripts"
+      ]
+    },
+    {
+      "title": "Mechanical & Operations",
+      "skills": [
+        "Coating Operations",
+        "Surface Preparation",
+        "Corrosion Protection",
+        "Quality Control",
+        "Industrial Standards Compliance"
+      ]
+    },
+    {
+      "title": "Iqama Status",
+      "skills": [
+        "Transferrable"
+      ]
+    }
+  ],
+  "languages": [
+    "English",
+    "Malayalam",
+    "Hindi",
+    "Arabic (Basic)"
+  ],
+  "quote": "Write code that changes lives.",
+  "tools": [
+    "github",
+    "visualstudio",
+    "linux"
+  ],
+  "contactTitle": "Get In Touch",
+  "contactDescription": "I'm currently open to new opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
+  "sayHelloButton": "Say Hello"
+}

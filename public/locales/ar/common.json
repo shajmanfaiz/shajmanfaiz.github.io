@@ -1,0 +1,165 @@
+{
+  "name": "شاجْمان فايز",
+  "position": "مطور ويب فول ستاك | مهندس ميكانيكي",
+  "contactInformation": "+966 54 116 8419",
+  "email": "shajmanfaiz@gmail.com",
+  "address": "الرياض، المملكة العربية السعودية",
+  "domain": "shajmanfaiz.github.io",
+  "resumeLink": "https://drive.google.com/file/d/1sqxhKQnX9vD1Q41R1QqjCUadxBZlfTJ-/view?usp=sharing",
+  "greeting": "أهلاً، أنا،",
+  "contactButtonText": "اتصل بي",
+  "resumeButtonText": "عرض السيرة الذاتية",
+  "aboutTitle": "اعرف من أنا",
+  "technicalSkillsTitle": "المهارات الفنية",
+  "toolsTitle": "الأدوات التي أستخدمها",
+  "projectsTitle": "أعمالي الأخيرة",
+  "projectsSubtitle": "إليك بعض المشاريع التي عملت عليها مؤخراً...",
+  "navLinks": [
+    {
+      "title": "الرئيسية",
+      "path": "#hero"
+    },
+    {
+      "title": "عني",
+      "path": "#about"
+    },
+    {
+      "title": "المشاريع",
+      "path": "#projects"
+    },
+    {
+      "title": "اتصل بي",
+      "path": "#contact"
+    }
+  ],
+  "socialMedia": [
+    {
+      "socialMedia": "Github",
+      "link": "https://github.com/shajmanfaiz",
+      "icon": "fab fa-github"
+    },
+    {
+      "socialMedia": "LinkedIn",
+      "link": "https://linkedin.com/in/shajmanfaiz/",
+      "icon": "fab fa-linkedin-in"
+    },
+    {
+      "socialMedia": "Website",
+      "link": "https://shajmanfaiz.github.io/",
+      "icon": "fas fa-globe"
+    }
+  ],
+  "summary": "مطور ويب فول ستاك يتمتع بخبرة في React و Next.js و Python و FastAPI. أستمتع ببناء تطبيقات ويب نظيفة وموثوقة وأتمتة مهام سير العمل باستخدام Python. تساعدني خلفيتي في الهندسة الميكانيكية وفحص الطلاء على التعامل مع المشكلات بتفكير منظم. حاليًا، أقوم بتحسين مهاراتي في الواجهة الخلفية واستكشاف التطوير القائم على الأتمتة والذكاء الاصطناعي.",
+  "education": [
+    {
+      "school": "معهد شري ديفي للهندسة (VTU)",
+      "degree": "بكالوريوس في الهندسة الميكانيكية",
+      "startYear": "2013-06-01",
+      "endYear": "2018-06-01"
+    },
+    {
+      "school": "مدرسة أبسارا العامة، كاساراجוד",
+      "degree": "الصف الثاني عشر",
+      "startYear": "2012-06-01",
+      "endYear": "2013-03-01"
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "أيوتكس الشرق الأوسط، دبي",
+      "position": "مطور ويب (عن بعد)",
+      "description": "مزود حلول برمجية يقدم تطبيقات ويب وهواتف محمولة حديثة للعملاء في جميع أنحاء دول مجلس التعاون الخليجي.",
+      "keyAchievements": "تم ترحيل العديد من مواقع الويب القديمة إلى React / Next.js مما أدى إلى تحسين الأداء بنسبة 40٪. تم بناء واجهات مستخدم سريعة الاستجابة ويمكن الوصول إليها مع بنية مكونات نظيفة. تم دمج واجهات برمجة التطبيقات والتعامل مع خطوط أنابيب النشر وسير العمل المؤتمت باستخدام GitHub Actions. تم اتباع عمليات Agile بما في ذلك Sprints ومراجعات الكود.",
+      "startYear": "2020-01-01",
+      "endYear": "2025-03-01"
+    },
+    {
+      "company": "بولي كوت للصناعات، ألوفا",
+      "position": "متدرب مساعد عمليات الطلاء",
+      "description": "دعم عمليات تجهيز الأسطح وسير عمل الطلاء، مع ضمان الامتثال للمعايير الصناعية.",
+      "keyAchievements": "ساعد في تبسيط الأنشطة اليومية ودعم فحوصات الجودة أثناء عمليات الطلاء.",
+      "startYear": "2025-01-01",
+      "endYear": "2025-03-15"
+    }
+  ],
+  "certifications": [
+    "برنامج مفتش الطلاء AMPP المستوى 1",
+    "مدقق داخلي QCI لـ IMS"
+  ],
+  "projects": [
+    {
+      "title": "محفظة GitHub",
+      "imgSrc": "assets/v80.jpg",
+      "description": "محفظة تعرض مشاريع تطوير الويب باستخدام React و Next.js و REST APIs وتصميم واجهة المستخدم ونصوص التشغيل الآلي.",
+      "link": "https://shajmanfaiz.github.io",
+      "hostedUrl": "https://shajmanfaiz.github.io"
+    },
+    {
+      "title": "تجديد موقع الشركة (Iotics)",
+      "imgSrc": "assets/estore.png",
+      "description": "تم تجديد موقع Iotics الرسمي باستخدام Next.js مع صور محسّنة وتوجيه أفضل وتحسين محركات البحث وأوقات تحميل أسرع.",
+      "link": "https://www.iotics.ae",
+      "hostedUrl": "https://www.iotics.ae"
+    },
+    {
+      "title": "مطعم سماش",
+      "imgSrc": "assets/donation.jpg",
+      "description": "تم تطوير صفحة هبوط حديثة لمطعم سماش ضمن مجموعة بن هندي.",
+      "link": "https://binhendi.com/brands/sammach/",
+      "hostedUrl": "https://binhendi.com/brands/sammach/"
+    }
+  ],
+  "skills": [
+    {
+      "title": "تطوير الويب والأدوات",
+      "skills": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "API Integration",
+        "RESTful APIs",
+        "Git & GitHub",
+        "CI/CD (GitHub Actions, Vercel, Netlify)",
+        "Docker (Basic)",
+        "Automation Scripts"
+      ]
+    },
+    {
+      "title": "الميكانيكا والعمليات",
+      "skills": [
+        "عمليات الطلاء",
+        "تحضير الأسطح",
+        "الحماية من التآكل",
+        "مراقبة الجودة",
+        "الامتثال للمعايير الصناعية"
+      ]
+    },
+    {
+      "title": "حالة الإقامة",
+      "skills": [
+        "قابلة للنقل"
+      ]
+    }
+  ],
+  "languages": [
+    "الإنجليزية",
+    "المالايالامية",
+    "الهندية",
+    "العربية (أساسي)"
+  ],
+  "quote": "اكتب رمزًا يغير الحياة.",
+  "tools": [
+    "github",
+    "vscode",
+    "linux"
+  ],
+  "contactTitle": "تواصل معي",
+  "contactDescription": "أنا متاح حالياً لفرص عمل جديدة. سواء كان لديك سؤال أو تريد فقط إلقاء التحية، فلا تتردد في التواصل معي!",
+  "sayHelloButton": "قل مرحبًا"
+ }
