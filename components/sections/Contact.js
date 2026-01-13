@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { data } from '../../data';
 
-const Contact = () => {
-    const translatedData = data();
+const Contact = ({ locale }) => {
+    const translatedData = data(locale);
 
     return (
         <section

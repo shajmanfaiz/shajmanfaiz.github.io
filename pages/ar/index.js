@@ -1,13 +1,13 @@
-import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
-import Projects from "../components/sections/Projects";
-import Contact from "../components/sections/Contact";
-import Header from "../components/core/Header";
+import Hero from "../../components/sections/Hero";
+import About from "../../components/sections/About";
+import Projects from "../../components/sections/Projects";
+import Contact from "../../components/sections/Contact";
+import Header from "../../components/core/Header";
 import Head from 'next/head';
-import { data } from '../data';
+import { data } from '../../data';
 
 export default function Home({ theme, toggleTheme }) {
-  const locale = 'en';
+  const locale = 'ar';
   const translatedData = data(locale);
 
   return (

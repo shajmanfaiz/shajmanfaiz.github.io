@@ -1,8 +1,8 @@
 import React from 'react';
 import { data } from '../../data';
 
-const About = () => {
-    const translatedData = data();
+const About = ({ locale }) => {
+    const translatedData = data(locale);
 
     return (
         <section
@@ -29,7 +29,7 @@ const About = () => {
                                 color: 'var(--text-primary)'
                             }}
                         >
-                            "{translatedData.quote}"
+                            &quot;{translatedData.quote}&quot;
                         </blockquote>
                     </div>
 

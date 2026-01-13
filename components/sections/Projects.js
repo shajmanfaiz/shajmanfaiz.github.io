@@ -1,12 +1,11 @@
-
 import React from 'react';
 import Card from '../core/Card';
 import Carousel from 'react-elastic-carousel';
 import useWindowSize from '../useWindowSize';
 import { data } from '../../data';
 
-export default function Projects() {
-    const translatedData = data(); // Call data as a function
+export default function Projects({ locale }) {
+    const translatedData = data(locale); // Call data as a function
     const { width } = useWindowSize();
     const isWide = width > 750 ? true : false;
     return (
@@ -56,4 +55,3 @@ export default function Projects() {
         </section>
     );
 }
-

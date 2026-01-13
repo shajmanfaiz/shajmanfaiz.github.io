@@ -3,10 +3,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { data } from '../../data';
 
-const Header = ({ theme, toggleTheme }) => {
+const Header = ({ theme, toggleTheme, locale }) => {
     const router = useRouter();
-    const { locale } = router;
-    const translatedData = data();
+    const translatedData = data(locale);
     const isArabic = locale === 'ar';
 
     const scrollToSection = (sectionId) => {
@@ -17,7 +16,12 @@ const Header = ({ theme, toggleTheme }) => {
     };
 
     const switchLocale = (newLocale) => {
-        router.push(router.pathname, router.asPath, { locale: newLocale });
+        const hash = window.location.hash;
+        if (newLocale === 'ar') {
+            router.push('/ar' + hash);
+        } else {
+            router.push('/' + hash);
+        }
     };
 
     return (
@@ -30,7 +34,7 @@ const Header = ({ theme, toggleTheme }) => {
         >
             <div className="container flex items-center justify-between h-16">
                 {/* Logo/Name */}
-                <Link href="/">
+                <Link href={isArabic ? "/ar" : "/"}>
                     <a
                         className="text-xl font-bold transition-colors"
                         style={{ color: 'var(--text-primary)' }}

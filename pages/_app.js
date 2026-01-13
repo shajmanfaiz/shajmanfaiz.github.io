@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import "../styles/globals.css";
-import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState('dark');
   const router = useRouter();
-  const { locale } = router;
 
   // Load theme from localStorage
   useEffect(() => {
@@ -22,14 +20,16 @@ function MyApp({ Component, pageProps }) {
     document.body.setAttribute('data-theme', newTheme);
   };
 
-  // Handle RTL for Arabic
+  // Handle RTL for Arabic based on path
   useEffect(() => {
-    const dir = locale === 'ar' ? 'rtl' : 'ltr';
+    const isArabic = router.pathname.startsWith('/ar');
+    const dir = isArabic ? 'rtl' : 'ltr';
+    const lang = isArabic ? 'ar' : 'en';
     document.documentElement.setAttribute('dir', dir);
-    document.documentElement.setAttribute('lang', locale || 'en');
-  }, [locale]);
+    document.documentElement.setAttribute('lang', lang);
+  }, [router.pathname]);
 
   return <Component {...pageProps} theme={theme} toggleTheme={toggleTheme} />;
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
