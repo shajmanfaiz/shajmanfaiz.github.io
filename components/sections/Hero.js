@@ -1,8 +1,8 @@
 import React from 'react';
 import { data } from '../../data';
 
-const Hero = () => {
-    const translatedData = data();
+const Hero = ({ locale }) => {
+    const translatedData = data(locale);
 
     return (
         <section

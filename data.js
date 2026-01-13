@@ -1,8 +1,20 @@
-//  data={.js}
-import { useTranslation } from 'react-i18next';
+import enCommon from './locales/en/common.json';
+import arCommon from './locales/ar/common.json';
 
-export const data = () => {
-  const { t } = useTranslation();
+const translations = {
+  en: enCommon,
+  ar: arCommon,
+};
+
+export const data = (locale = 'en') => {
+  const tData = translations[locale] || translations['en'];
+
+  // Helper to emulate t() behavior for simple keys
+  const t = (key, options = {}) => {
+    const value = tData[key];
+    if (value === undefined) return key;
+    return value;
+  };
 
   return {
     name: t('name'),
