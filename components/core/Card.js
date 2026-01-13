@@ -3,31 +3,22 @@ import React from 'react';
 export default function Card({ title, imgSrc, desc, link }) {
     return (
         <div
-            className="card text-white bg-dark"
-            style={{ boxShadow: '10px -10px #397ca4', overflow: 'hidden' }}
+            className="shadow-[10px_-10px_#397ca4] overflow-hidden flex flex-col rounded w-full max-w-[450px]"
+            style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-primary)' }}
         >
-            <div
-                style={{
-                    height: '250px',
-                    width: '450px',
-                    overflow: 'hidden',
-                    margin: '0 auto'
-                }}
-            >
+            <div className="h-[250px] w-full overflow-hidden mx-auto relative group">
                 <div
-                    className="card-img-top img-responsive"
-                    alt="Card Project head cap"
+                    className="w-full h-full bg-no-repeat bg-top bg-cover transition-transform duration-500 group-hover:scale-110"
                     style={{
-                        userSelect: 'none',
-                        height: '100%',
-                        background: `url(${imgSrc}) no-repeat scroll center top / cover`
+                        backgroundImage: `url(${imgSrc})`,
+                        userSelect: 'none'
                     }}
                 ></div>
             </div>
-            <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{desc}</p>
-                <a href={link} className="btn btn-primary">
+            <div className="p-5 flex flex-col items-start gap-3 flex-grow">
+                <h5 className="text-[1.25rem] font-medium leading-tight md:text-base">{title}</h5>
+                <p className="text-base md:text-sm" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
+                <a href={link} className="inline-block px-4 py-2 bg-[#0d6efd] text-white font-medium text-center align-middle cursor-pointer select-none border border-transparent rounded transition-colors hover:bg-[#0b5ed7] focus:shadow-[0_0_0_0.25rem_rgba(49,132,253,0.5)]">
                     View Project
                 </a>
             </div>

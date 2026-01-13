@@ -1,6 +1,6 @@
 .projects {
   font-family: var(--secFont);
-  height: 100vh;
+  min-height: calc(100vh - 70px);
   width: 100%;
   display: flex;
   justify-content: center;
