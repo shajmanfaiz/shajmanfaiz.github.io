@@ -89,21 +89,42 @@
   "projects": [
     {
       "title": "محفظة GitHub",
-      "imgSrc": "assets/v80.jpg",
+      "imgSrc": "assets/shajman_github.webp",
       "description": "محفظة تعرض مشاريع تطوير الويب باستخدام React و Next.js و REST APIs وتصميم واجهة المستخدم ونصوص التشغيل الآلي.",
       "link": "https://shajmanfaiz.github.io",
       "hostedUrl": "https://shajmanfaiz.github.io"
     },
     {
       "title": "تجديد موقع الشركة (Iotics)",
-      "imgSrc": "assets/estore.png",
+      "imgSrc": "assets/iotics.webp",
       "description": "تم تجديد موقع Iotics الرسمي باستخدام Next.js مع صور محسّنة وتوجيه أفضل وتحسين محركات البحث وأوقات تحميل أسرع.",
       "link": "https://www.iotics.ae",
       "hostedUrl": "https://www.iotics.ae"
     },
     {
       "title": "مطعم سماش",
-      "imgSrc": "assets/donation.jpg",
+      "imgSrc": "assets/samamch_binhendi.webp",
+      "description": "تم تطوير صفحة هبوط حديثة لمطعم سماش ضمن مجموعة بن هندي.",
+      "link": "https://binhendi.com/brands/sammach/",
+      "hostedUrl": "https://binhendi.com/brands/sammach/"
+    },
+    {
+      "title": "محفظة GitHub",
+      "imgSrc": "assets/shajman_github.webp",
+      "description": "محفظة تعرض مشاريع تطوير الويب باستخدام React و Next.js و REST APIs وتصميم واجهة المستخدم ونصوص التشغيل الآلي.",
+      "link": "https://shajmanfaiz.github.io",
+      "hostedUrl": "https://shajmanfaiz.github.io"
+    },
+    {
+      "title": "تجديد موقع الشركة (Iotics)",
+      "imgSrc": "assets/iotics.webp",
+      "description": "تم تجديد موقع Iotics الرسمي باستخدام Next.js مع صور محسّنة وتوجيه أفضل وتحسين محركات البحث وأوقات تحميل أسرع.",
+      "link": "https://www.iotics.ae",
+      "hostedUrl": "https://www.iotics.ae"
+    },
+    {
+      "title": "مطعم سماش",
+      "imgSrc": "assets/samamch_binhendi.webp",
       "description": "تم تطوير صفحة هبوط حديثة لمطعم سماش ضمن مجموعة بن هندي.",
       "link": "https://binhendi.com/brands/sammach/",
       "hostedUrl": "https://binhendi.com/brands/sammach/"

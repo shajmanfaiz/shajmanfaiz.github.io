@@ -91,42 +91,42 @@
   "projects": [
     {
       "title": "GitHub Portfolio",
-      "imgSrc": "assets/v80.jpg",
+      "imgSrc": "assets/shajman_github.webp",
       "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
       "link": "https://shajmanfaiz.github.io",
       "hostedUrl": "https://shajmanfaiz.github.io"
     },
     {
       "title": "Company Website Revamp (Iotics)",
-      "imgSrc": "assets/estore.png",
+      "imgSrc": "assets/iotics.webp",
       "description": "Revamped the official Iotics website using Next.js with optimized images, better routing, improved SEO, and faster load times.",
       "link": "https://www.iotics.me",
       "hostedUrl": "https://www.iotics.me"
     },
     {
       "title": "Sammach Restaurant",
-      "imgSrc": "assets/donation.jpg",
+      "imgSrc": "assets/samamch_binhendi.webp",
       "description": "Developed a modern landing page for Sammach Restaurant under the Binhendi Group.",
       "link": "https://binhendi.com/brands/sammach/",
       "hostedUrl": "https://binhendi.com/brands/sammach/"
     },
     {
       "title": "GitHub Portfolio",
-      "imgSrc": "assets/v80.jpg",
+      "imgSrc": "assets/shajman_github.webp",
       "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
       "link": "https://shajmanfaiz.github.io",
       "hostedUrl": "https://shajmanfaiz.github.io"
     },
     {
       "title": "Company Website Revamp (Iotics)",
-      "imgSrc": "assets/estore.png",
+      "imgSrc": "assets/iotics.webp",
       "description": "Revamped the official Iotics website using Next.js with optimized images, better routing, improved SEO, and faster load times.",
       "link": "https://www.iotics.me",
       "hostedUrl": "https://www.iotics.me"
     },
     {
       "title": "Sammach Restaurant",
-      "imgSrc": "assets/donation.jpg",
+      "imgSrc": "assets/samamch_binhendi.webp",
       "description": "Developed a modern landing page for Sammach Restaurant under the Binhendi Group.",
       "link": "https://binhendi.com/brands/sammach/",
       "hostedUrl": "https://binhendi.com/brands/sammach/"
