@@ -51,7 +51,7 @@
       "icon": "fas fa-globe"
     }
   ],
-  "summary": "Full Stack Web Developer experienced in React, Next.js, Python, and FastAPI. I enjoy building clean, reliable web applications and automating workflows using Python. My background in Mechanical Engineering and coating inspection helps me approach problems with structured thinking. Currently improving my backend skills and exploring automation and AI-based development.",
+  "summary": "Full Stack Web Developer experienced in React, Next.js, Python, and FastAPI. I enjoy building clean, reliable web applications and automating workflows using Python. My background in Mechanical Engineering and coating inspection helps me approach problems with structured thinking. Currently exploring automation and AI-based development.",
   "education": [
     {
       "school": "Shree Devi Institute of Engineering (VTU)",
@@ -95,6 +95,13 @@
       "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
       "link": "https://shajmanfaiz.github.io",
       "hostedUrl": "https://shajmanfaiz.github.io"
+    },
+    {
+      "title": "Nexaflow Engineering",
+      "imgSrc": "assets/nexaflowengg_website.webp",
+      "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
+      "link": "https://www.nexafloweng.com",
+      "hostedUrl": "https://www.nexafloweng.com"
     },
     {
       "title": "Company Website Revamp (Iotics)",
