@@ -12,7 +12,7 @@ export default function Hero({ locale }) {
           style={{ borderColor: 'var(--border)' }}
         >
           <div style={{ direction: isAr ? 'rtl' : 'ltr' }}>
-            <p className="label mb-4">{t.greeting} — {isAr ? 'مرحبا' : 'Available for work'}</p>
+            <p className="label mb-4">{t.greeting} 👋</p>
             <h1 className="text-[2.6rem] md:text-[3.4rem] font-bold tracking-[-0.04em] leading-[0.95] mb-4" style={{ color: 'var(--fg)' }}>
               {t.name}
               <span className="block text-[1.1rem] md:text-[1.25rem] font-medium tracking-tight mt-3" style={{ color: 'var(--fg-2)' }}>
@@ -30,11 +30,7 @@ export default function Hero({ locale }) {
                 {t.resumeButtonText}
               </a>
             </div>
-            <div className="flex items-center gap-4 text-[13px]" style={{ color: 'var(--fg-2)' }}>
-              <span className="inline-flex items-center gap-2"><i className="fas fa-envelope text-xs" /> {t.email}</span>
-              <span className="hidden sm:inline-flex items-center gap-2"><i className="fas fa-map-marker-alt text-xs" /> {t.address}</span>
-            </div>
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3">
               {t.socialMedia.map((s, i) => (
                 <a key={i} href={s.link} target="_blank" rel="noopener noreferrer" aria-label={s.socialMedia}
                   className="w-9 h-9 rounded-full flex items-center justify-center border hover:opacity-70 transition-opacity"
@@ -45,19 +41,17 @@ export default function Hero({ locale }) {
             </div>
           </div>
 
-          {/* Right: monochrome stats / info card */}
+          {/* Right: minimal focus card — no location/iqama/phone/email */}
           <div className="mono-card rounded-2xl p-6 md:p-7" style={{ background: 'var(--bg-2)' }}>
-            <p className="label mb-4">{isAr ? 'نظرة سريعة' : 'At a glance'}</p>
+            <p className="label mb-4">{isAr ? 'التركيز' : 'Focus'}</p>
             <div className="space-y-5">
-              <div className="flex justify-between gap-4 pb-4 border-b" style={{ borderColor: 'var(--border)' }}>
-                <span className="text-sm" style={{ color: 'var(--fg-2)' }}>{isAr ? 'الموقع' : 'Location'}</span>
-                <span className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>{t.address}</span>
-              </div>
-              <div className="flex justify-between gap-4 pb-4 border-b" style={{ borderColor: 'var(--border)' }}>
-                <span className="text-sm" style={{ color: 'var(--fg-2)' }}>{isAr ? 'الإقامة' : 'Iqama'}</span>
-                <span className="text-xs font-bold tracking-widest px-2.5 py-1 rounded-full" style={{ background: 'var(--fg)', color: 'var(--bg)' }}>
-                  {t.skills.find(s => s.title.toLowerCase().includes('iqama') || s.title.includes('الإقامة'))?.skills[0] || 'Transferable'}
-                </span>
+              <div>
+                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--fg)' }}>{isAr ? 'أعمل بـ' : 'I work with'}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {['React', 'Next.js', 'Python', 'FastAPI', 'TypeScript', 'Node.js'].map((s) => (
+                    <span key={s} className="text-xs px-2.5 py-1 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--fg-2)', background: 'var(--bg)' }}>{s}</span>
+                  ))}
+                </div>
               </div>
               <div>
                 <p className="text-sm font-semibold mb-2" style={{ color: 'var(--fg)' }}>{isAr ? 'اللغات' : 'Languages'}</p>
@@ -70,6 +64,9 @@ export default function Hero({ locale }) {
               <blockquote className="text-sm italic border-l-2 pl-3 py-1" style={{ borderColor: 'var(--fg)', color: 'var(--fg-2)' }}>
                 “{t.quote}”
               </blockquote>
+              <p className="text-xs leading-5" style={{ color: 'var(--fg-3)' }}>
+                {isAr ? 'التفاصيل الكاملة في السيرة الذاتية.' : 'Full details in resume.'}
+              </p>
             </div>
           </div>
         </div>

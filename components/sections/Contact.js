@@ -15,11 +15,11 @@ export default function Contact({ locale }) {
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <a href={`mailto:${t.email}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold"
               style={{ background: 'var(--bg)', color: 'var(--fg)' }}>
-              {t.sayHelloButton} — {t.email} <span>→</span>
+              {t.sayHelloButton} <span>→</span>
             </a>
-            <a href={`tel:${t.contactInformation?.replace(/\s/g,'')}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border"
+            <a href={t.resumeLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border"
               style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'var(--bg)' }}>
-              <i className="fas fa-phone text-xs" /> {t.contactInformation}
+              {t.resumeButtonText}
             </a>
           </div>
 
@@ -32,8 +32,6 @@ export default function Contact({ locale }) {
               </a>
             ))}
           </div>
-
-          <p className="text-xs mt-8 opacity-50">{t.address} · {t.email}</p>
         </div>
       </div>
     </section>

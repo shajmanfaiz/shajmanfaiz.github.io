@@ -7,7 +7,7 @@
   "domain": "shajmanfaiz.github.io",
   "resumeLink": "https://drive.google.com/file/d/1sqxhKQnX9vD1Q41R1QqjCUadxBZlfTJ-/view?usp=sharing",
   "greeting": "أهلاً، أنا،",
-  "contactButtonText": "اتصل بي",
+  "contactButtonText": "قل مرحبًا",
   "resumeButtonText": "عرض السيرة الذاتية",
   "aboutTitle": "اعرف من أنا",
   "technicalSkillsTitle": "المهارات الفنية",
@@ -15,54 +15,20 @@
   "projectsTitle": "أعمالي الأخيرة",
   "projectsSubtitle": "إليك بعض المشاريع التي عملت عليها مؤخراً...",
   "navLinks": [
-    {
-      "title": "الرئيسية",
-      "path": "#hero"
-    },
-    {
-      "title": "عني",
-      "path": "#about"
-    },
-    {
-      "title": "المشاريع",
-      "path": "#projects"
-    },
-    {
-      "title": "اتصل بي",
-      "path": "#contact"
-    }
+    { "title": "الرئيسية", "path": "#hero" },
+    { "title": "عني", "path": "#about" },
+    { "title": "المشاريع", "path": "#projects" },
+    { "title": "اتصل بي", "path": "#contact" }
   ],
   "socialMedia": [
-    {
-      "socialMedia": "Github",
-      "link": "https://github.com/shajmanfaiz",
-      "icon": "fab fa-github"
-    },
-    {
-      "socialMedia": "LinkedIn",
-      "link": "https://linkedin.com/in/shajmanfaiz/",
-      "icon": "fab fa-linkedin-in"
-    },
-    {
-      "socialMedia": "Website",
-      "link": "https://shajmanfaiz.github.io/",
-      "icon": "fas fa-globe"
-    }
+    { "socialMedia": "Github", "link": "https://github.com/shajmanfaiz", "icon": "fab fa-github" },
+    { "socialMedia": "LinkedIn", "link": "https://linkedin.com/in/shajmanfaiz/", "icon": "fab fa-linkedin-in" },
+    { "socialMedia": "Website", "link": "https://shajmanfaiz.github.io/", "icon": "fas fa-globe" }
   ],
   "summary": "مطور ويب فول ستاك يتمتع بخبرة في React و Next.js و Python و FastAPI. أستمتع ببناء تطبيقات ويب نظيفة وموثوقة وأتمتة مهام سير العمل باستخدام Python. تساعدني خلفيتي في الهندسة الميكانيكية وفحص الطلاء على التعامل مع المشكلات بتفكير منظم. حاليًا، أقوم بتحسين مهاراتي في الواجهة الخلفية واستكشاف التطوير القائم على الأتمتة والذكاء الاصطناعي.",
   "education": [
-    {
-      "school": "معهد شري ديفي للهندسة (VTU)",
-      "degree": "بكالوريوس في الهندسة الميكانيكية",
-      "startYear": "2013-06-01",
-      "endYear": "2018-06-01"
-    },
-    {
-      "school": "مدرسة أبسارا العامة، كاساراجוד",
-      "degree": "الصف الثاني عشر",
-      "startYear": "2012-06-01",
-      "endYear": "2013-03-01"
-    }
+    { "school": "معهد شري ديفي للهندسة (VTU)", "degree": "بكالوريوس في الهندسة الميكانيكية", "startYear": "2013-06-01", "endYear": "2018-06-01" },
+    { "school": "مدرسة أبسارا العامة، كاساراجוד", "degree": "الصف الثاني عشر", "startYear": "2012-06-01", "endYear": "2013-03-01" }
   ],
   "workExperience": [
     {
@@ -82,84 +48,67 @@
       "endYear": "2025-03-15"
     }
   ],
-  "certifications": [
-    "برنامج مفتش الطلاء AMPP المستوى 1",
-    "مدقق داخلي QCI لـ IMS"
-  ],
+  "certifications": ["برنامج مفتش الطلاء AMPP المستوى 1", "مدقق داخلي QCI لـ IMS"],
   "projects": [
     {
+      "title": "نيكسافلو للهندسة",
+      "imgSrc": "assets/nexaflowengg_website.webp",
+      "description": "موقع شركة لشركة تداول إلكتروني — Next.js مع صور محسّنة وتوجيه نظيف و SEO.",
+      "link": "https://www.nexafloweng.com",
+      "hostedUrl": "https://www.nexafloweng.com"
+    },
+    {
+      "title": "تجديد موقع الشركة (Iotics)",
+      "imgSrc": "assets/iotics.webp",
+      "description": "تم تجديد موقع Iotics الرسمي باستخدام Next.js مع صور محسّنة وتوجيه أفضل وتحسين محركات البحث وأوقات تحميل أسرع.",
+      "link": "https://www.iotics.me",
+      "hostedUrl": "https://www.iotics.me"
+    },
+    {
+      "title": "مطعم سماش",
+      "imgSrc": "assets/samamch_binhendi.webp",
+      "description": "تم تطوير صفحة هبوط حديثة لمطعم سماش ضمن مجموعة بن هندي.",
+      "link": "https://binhendi.com/brands/sammach/",
+      "hostedUrl": "https://binhendi.com/brands/sammach/"
+    },
+    {
       "title": "محفظة GitHub",
-      "imgSrc": "assets/v80.jpg",
+      "imgSrc": "assets/shajman_github.webp",
       "description": "محفظة تعرض مشاريع تطوير الويب باستخدام React و Next.js و REST APIs وتصميم واجهة المستخدم ونصوص التشغيل الآلي.",
       "link": "https://shajmanfaiz.github.io",
       "hostedUrl": "https://shajmanfaiz.github.io"
     },
     {
-      "title": "تجديد موقع الشركة (Iotics)",
+      "title": "سفاري بايت — منصة مستقلة",
       "imgSrc": "assets/estore.png",
-      "description": "تم تجديد موقع Iotics الرسمي باستخدام Next.js مع صور محسّنة وتوجيه أفضل وتحسين محركات البحث وأوقات تحميل أسرع.",
-      "link": "https://www.iotics.ae",
-      "hostedUrl": "https://www.iotics.ae"
+      "description": "موقع خدمات مستقلة — Next.js + TypeScript مع قوائم خدمات وتدفقات تواصل وواجهة أحادية اللون.",
+      "link": "https://github.com/shajmanfaiz/safaribyte",
+      "hostedUrl": "https://github.com/shajmanfaiz/safaribyte"
     },
     {
-      "title": "مطعم سماش",
+      "title": "Job Hunter AI",
+      "imgSrc": "assets/v80.jpg",
+      "description": "أتمتة بايثون تبحث عن الوظائف حسب العنوان وترسل رسائل بريد وواتساب مخصصة مع السيرة الذاتية.",
+      "link": "https://github.com/shajmanfaiz/job-hunter-ai",
+      "hostedUrl": "https://github.com/shajmanfaiz/job-hunter-ai"
+    },
+    {
+      "title": "منشئ السيرة ATS",
       "imgSrc": "assets/donation.jpg",
-      "description": "تم تطوير صفحة هبوط حديثة لمطعم سماش ضمن مجموعة بن هندي.",
-      "link": "https://binhendi.com/brands/sammach/",
-      "hostedUrl": "https://binhendi.com/brands/sammach/"
+      "description": "أداة لإنشاء سيرة ذاتية متوافقة مع ATS — تولّد ملفات PDF نظيفة وجاهزة للتوظيف.",
+      "link": "https://github.com/shajmanfaiz/ats-resume",
+      "hostedUrl": "https://github.com/shajmanfaiz/ats-resume"
     }
   ],
   "skills": [
-    {
-      "title": "تطوير الويب والأدوات",
-      "skills": [
-        "React.js",
-        "Next.js",
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "FastAPI",
-        "Express.js",
-        "MongoDB",
-        "MySQL",
-        "API Integration",
-        "RESTful APIs",
-        "Git & GitHub",
-        "CI/CD (GitHub Actions, Vercel, Netlify)",
-        "Docker (Basic)",
-        "Automation Scripts"
-      ]
-    },
-    {
-      "title": "الميكانيكا والعمليات",
-      "skills": [
-        "عمليات الطلاء",
-        "تحضير الأسطح",
-        "الحماية من التآكل",
-        "مراقبة الجودة",
-        "الامتثال للمعايير الصناعية"
-      ]
-    },
-    {
-      "title": "حالة الإقامة",
-      "skills": [
-        "قابلة للنقل"
-      ]
-    }
+    { "title": "تطوير الويب والأدوات", "skills": ["React.js", "Next.js", "TypeScript", "Node.js", "Python", "FastAPI", "Express.js", "MongoDB", "MySQL", "API Integration", "RESTful APIs", "Git & GitHub", "CI/CD (GitHub Actions, Vercel, Netlify)", "Docker (Basic)", "Automation Scripts"] },
+    { "title": "الميكانيكا والعمليات", "skills": ["عمليات الطلاء", "تحضير الأسطح", "الحماية من التآكل", "مراقبة الجودة", "الامتثال للمعايير الصناعية"] },
+    { "title": "حالة الإقامة", "skills": ["قابلة للنقل"] }
   ],
-  "languages": [
-    "الإنجليزية",
-    "المالايالامية",
-    "الهندية",
-    "العربية (أساسي)"
-  ],
+  "languages": ["الإنجليزية", "المالايالامية", "الهندية", "العربية (أساسي)"],
   "quote": "اكتب رمزًا يغير الحياة.",
-  "tools": [
-    "github",
-    "vscode",
-    "linux"
-  ],
+  "tools": ["github", "vscode", "linux"],
   "contactTitle": "تواصل معي",
   "contactDescription": "أنا متاح حالياً لفرص عمل جديدة. سواء كان لديك سؤال أو تريد فقط إلقاء التحية، فلا تتردد في التواصل معي!",
   "sayHelloButton": "قل مرحبًا"
- }
+}
