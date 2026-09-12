@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import { data } from '../lib/data.js';
+const locale = 'en';
+const t = data(locale);
+---
+<Layout title={`${t.name} | Portfolio`} description={t.summary} locale={locale}>
+  <Header locale={locale} />
+  <main>
+    <Hero locale={locale} />
+    <About locale={locale} />
+    <Projects locale={locale} />
+    <Contact locale={locale} />
+  </main>
+  <footer class="py-8 text-center text-xs border-t" style="border-color: var(--border); color: var(--fg-3); background: var(--bg)">
+    <div class="container-narrow flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span>© {new Date().getFullYear()} {t.name}.</span>
+      <span class="inline-flex gap-3">
+        {t.socialMedia.map((s) => (
+          <a href={s.link} target="_blank" rel="noopener noreferrer" style="color: var(--fg-3)"><i class={`${s.icon}`}></i></a>
+        ))}
+      </span>
+    </div>
+  </footer>
+</Layout>

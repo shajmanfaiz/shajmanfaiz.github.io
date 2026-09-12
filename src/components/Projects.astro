@@ -1,0 +1,86 @@
+---
+import { data } from '../lib/data.js';
+const { locale = 'en' } = Astro.props;
+const t = data(locale);
+const isAr = locale === 'ar';
+
+// dedup
+function dedup(projects) {
+  const seen = new Set();
+  const out = [];
+  for (const p of projects) {
+    const key = p.title.trim().toLowerCase();
+    if (!seen.has(key)) { seen.add(key); out.push(p); }
+  }
+  return out;
+}
+const projects = dedup(t.projects || []);
+const doubled = [...projects, ...projects]; // CSS seamless needs double - hidden from badge count
+---
+<section id="projects" class="section-pad overflow-hidden" style="background: var(--bg-2)">
+  <div class="container-narrow">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-8" style={`direction: ${isAr ? 'rtl' : 'ltr'}`}>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight" style="color: var(--fg)">{t.projectsTitle}</h2>
+        <p class="text-sm mt-2" style="color: var(--fg-2)">{t.projectsSubtitle}</p>
+      </div>
+      <span class="text-xs px-3 py-1 rounded-full border" style="border-color: var(--border); color: var(--fg-3)">{projects.length} {isAr ? 'مشاريع' : 'projects'} • {isAr ? 'مرر للتوقف' : 'hover to pause'}</span>
+    </div>
+  </div>
+
+  <div class="marquee" role="region" aria-label={t.projectsTitle}>
+    <div class="marquee-track" style={`--marquee-duration: ${Math.max(20, projects.length * 6)}s; animation-direction: ${isAr ? 'reverse' : 'normal'}`}>
+      {doubled.map((p, idx) => (
+        <article class="mono-card rounded-2xl overflow-hidden flex flex-col group shrink-0 w-[300px] sm:w-[340px] md:w-[360px]" aria-hidden={idx >= projects.length ? 'true' : undefined}>
+          <div class="aspect-[16/10] w-full overflow-hidden bg-[var(--bg-3)] border-b" style="border-color: var(--border)">
+            <img src={p.imgSrc?.startsWith('assets/') ? `/${p.imgSrc}` : p.imgSrc} alt={p.title} class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="p-5 flex flex-col gap-3 flex-1">
+            <h3 class="text-[15px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
+            <p class="text-[13px] leading-6 line-clamp-3" style="color: var(--fg-2)">{p.description}</p>
+            <div class="flex gap-2 mt-auto pt-2">
+              <a href={p.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border hover:opacity-80 transition-opacity" style="border-color: var(--fg); background: var(--fg); color: var(--bg)">{isAr ? 'عرض' : 'View'} <span>↗</span></a>
+              {p.hostedUrl && p.hostedUrl !== p.link && (
+                <a href={p.hostedUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: transparent">Live</a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 0 1rem;
+    cursor: grab;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+    animation: marquee var(--marquee-duration, 40s) linear infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; transform: none; }
+    .marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .marquee::-webkit-scrollbar { display: none; }
+  }
+  @media (max-width: 640px) {
+    .marquee-track { gap: 16px; }
+  }
+</style>

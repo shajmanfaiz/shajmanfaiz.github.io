@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - master
+      - dev
 
 permissions:
   contents: write
@@ -27,14 +28,12 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
 
       - name: Add .nojekyll
-        run: touch out/.nojekyll
+        run: touch dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out
+          folder: dist

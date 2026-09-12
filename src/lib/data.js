@@ -1,5 +1,5 @@
-import enCommon from './locales/en/common.json';
-import arCommon from './locales/ar/common.json';
+import enCommon from '../../locales/en/common.json';
+import arCommon from '../../locales/ar/common.json';
 
 const translations = {
   en: enCommon,
@@ -8,14 +8,11 @@ const translations = {
 
 export const data = (locale = 'en') => {
   const tData = translations[locale] || translations['en'];
-
-  // Helper to emulate t() behavior for simple keys
-  const t = (key, options = {}) => {
+  const t = (key) => {
     const value = tData[key];
     if (value === undefined) return key;
     return value;
   };
-
   return {
     name: t('name'),
     position: t('position'),
@@ -32,18 +29,18 @@ export const data = (locale = 'en') => {
     toolsTitle: t('toolsTitle'),
     projectsTitle: t('projectsTitle'),
     projectsSubtitle: t('projectsSubtitle'),
-    navLinks: t('navLinks', { returnObjects: true }),
-    socialMedia: t('socialMedia', { returnObjects: true }),
+    navLinks: t('navLinks'),
+    socialMedia: t('socialMedia'),
     summary: t('summary'),
-    education: t('education', { returnObjects: true }),
-    workExperience: t('workExperience', { returnObjects: true }),
-    certifications: t('certifications', { returnObjects: true }),
-    projects: t('projects', { returnObjects: true }),
-    skills: t('skills', { returnObjects: true }),
-    languages: t('languages', { returnObjects: true }),
-    hobbies: t('hobbies', { returnObjects: true }),
+    education: t('education'),
+    workExperience: t('workExperience'),
+    certifications: t('certifications'),
+    projects: t('projects'),
+    skills: t('skills'),
+    languages: t('languages'),
+    hobbies: t('hobbies'),
     quote: t('quote'),
-    tools: t('tools', { returnObjects: true }),
+    tools: t('tools'),
     contactTitle: t('contactTitle'),
     contactDescription: t('contactDescription'),
     sayHelloButton: t('sayHelloButton'),

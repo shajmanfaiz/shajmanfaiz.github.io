@@ -1,0 +1,35 @@
+---
+import '../styles/globals.css';
+import StarField from '../components/StarField.astro';
+const { title, description, locale = 'en' } = Astro.props;
+const dir = locale === 'ar' ? 'rtl' : 'ltr';
+const lang = locale;
+---
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>{title}</title>
+  </head>
+  <body data-theme="light">
+    <StarField />
+    <slot />
+    <script is:inline>
+      // init theme before paint (prevent flash)
+      (function() {
+        try {
+          const saved = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const initial = saved || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', initial);
+          document.body.setAttribute('data-theme', initial);
+        } catch(e) {}
+      })();
+    </script>
+  </body>
+</html>

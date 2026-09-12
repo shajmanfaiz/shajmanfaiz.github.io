@@ -1,0 +1,16 @@
+---
+import { data } from '../lib/data.js';
+const { locale = 'en' } = Astro.props;
+const t = data(locale);
+const isAr = locale === 'ar';
+---
+<section id="about" class="section-pad" style="background: var(--bg); border-bottom: 1px solid var(--border)">
+  <div class="container-narrow">
+    <div class="max-w-3xl mb-10" style={`direction: ${isAr ? 'rtl' : 'ltr'}`}>
+      <p class="label mb-3">{isAr ? 'عني' : 'About'}</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4" style="color: var(--fg)">{t.aboutTitle}</h2>
+      <p class="text-[15px] leading-7" style="color: var(--fg-2)">{t.summary}</p>
+      <blockquote class="text-sm italic border-l-2 pl-3 py-1 mt-6" style="border-color: var(--fg); color: var(--fg-2)">“{t.quote}”</blockquote>
+    </div>
+  </div>
+</section>
