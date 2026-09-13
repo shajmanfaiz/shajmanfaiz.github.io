@@ -1,20 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio — Astro
 
-## Getting Started
+Minimal Astro rewrite of `shajmanfaiz.github.io` (previously Next.js 11).
 
-First, run the development server:
+## Stack
+- [Astro 4](https://astro.build) + `@astrojs/tailwind`
+- Tailwind CSS (existing `src/styles/globals.css` monochrome system)
+- Vanilla JS for theme toggle / scroll (no React runtime)
 
+## Development
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # -> dist/
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
+```
+src/
+  layouts/Layout.astro
+  components/Header.astro, Hero.astro, About.astro, Projects.astro, Contact.astro, StarField.astro
+  pages/index.astro, pages/ar/index.astro
+  lib/data.js
+  styles/globals.css
+locales/en|ar/common.json
+public/assets/*
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Projects rolling
+CSS seamless marquee (`Projects.astro`): duplicated track `translateX(-50%)` with `aria-hidden` clones, `hover:pause`, `prefers-reduced-motion` fallback. Badge shows unique count (7). SafariByte live → https://shajmanfaiz.github.io/safaribyte
 
-## Libraries Used
+## Deploy
+GitHub Pages via `.github/workflows/deployment.yml` → `dist/` + `.nojekyll` on push to `main`/`dev`.
 
--   [React Elastic Carousel](https://sag1v.github.io/react-elastic-carousel)
--   [React-Tooltip](https://wwayne.github.io/react-tooltips)
+Previous Next.js code archived on `main` / `dev` before `feat/astro`.

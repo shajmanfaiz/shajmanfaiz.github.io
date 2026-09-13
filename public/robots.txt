@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shajmanfaiz.github.io/sitemap-index.xml
