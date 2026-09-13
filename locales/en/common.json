@@ -82,21 +82,21 @@
     },
     {
       "title": "SafariByte — Freelance Platform",
-      "imgSrc": "assets/estore.webp",
+      "imgSrc": "assets/safaribyte_website.webp",
       "description": "Independent freelance services site — Next.js + TypeScript with service listings, contact flows, and clean monochrome UI.",
       "link": "https://shajmanfaiz.github.io/safaribyte",
       "hostedUrl": "https://shajmanfaiz.github.io/safaribyte"
     },
     {
       "title": "Job Hunter AI",
-      "imgSrc": "assets/v80.webp",
+      "imgSrc": "assets/job_hunter_ai_app.webp",
       "description": "Python automation that scrapes jobs by title and sends tailored emails & WhatsApp messages with resume — scheduled & configurable.",
       "link": "https://github.com/shajmanfaiz/job-hunter-ai",
       "hostedUrl": "https://github.com/shajmanfaiz/job-hunter-ai"
     },
     {
       "title": "ATS Resume Builder",
-      "imgSrc": "assets/donation.webp",
+      "imgSrc": "assets/ats_resume_app.webp",
       "description": "ATS-friendly resume maker with minimal customization — generates clean, recruiter-ready PDFs from structured data.",
       "link": "https://github.com/shajmanfaiz/ats-resume",
       "hostedUrl": "https://github.com/shajmanfaiz/ats-resume"

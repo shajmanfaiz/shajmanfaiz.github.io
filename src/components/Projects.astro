@@ -1,8 +1,27 @@
 ---
+import { Image } from 'astro:assets';
 import { data } from '../lib/data.js';
+import nexaflowImg from '../assets/nexaflowengg_website.webp';
+import ioticsImg from '../assets/iotics.webp';
+import samamchImg from '../assets/samamch_binhendi.webp';
+import githubImg from '../assets/shajman_github.webp';
+import safaribyteImg from '../assets/safaribyte_website.webp';
+import jobhunterImg from '../assets/job_hunter_ai_app.webp';
+import atsImg from '../assets/ats_resume_app.webp';
+
 const { locale = 'en' } = Astro.props;
 const t = data(locale);
 const isAr = locale === 'ar';
+
+const imageMap = {
+  'assets/nexaflowengg_website.webp': nexaflowImg,
+  'assets/iotics.webp': ioticsImg,
+  'assets/samamch_binhendi.webp': samamchImg,
+  'assets/shajman_github.webp': githubImg,
+  'assets/safaribyte_website.webp': safaribyteImg,
+  'assets/job_hunter_ai_app.webp': jobhunterImg,
+  'assets/ats_resume_app.webp': atsImg,
+};
 
 // dedup
 function dedup(projects) {
@@ -35,17 +54,28 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
         return (
           <article class="mono-card rounded-2xl overflow-hidden flex flex-col group shrink-0 w-[300px] sm:w-[340px] md:w-[360px]" aria-hidden={isClone ? 'true' : undefined} inert={isClone ? true : undefined}>
             <div class="aspect-[16/10] w-full overflow-hidden bg-[var(--bg-3)] border-b" style="border-color: var(--border)">
-              <img
-                src={p.imgSrc?.startsWith('assets/') ? `/${p.imgSrc}` : p.imgSrc}
-                alt={p.title}
-                width="360"
-                height="225"
-                class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                loading={idx < 3 ? 'eager' : 'lazy'}
-                decoding="async"
-                fetchpriority={idx < 2 ? 'high' : 'auto'}
-                onerror="this.style.display='none'"
-              />
+              {imageMap[p.imgSrc] ? (
+                <Image
+                  src={imageMap[p.imgSrc]}
+                  alt={p.title}
+                  width={360}
+                  height={225}
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  loading={idx < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              ) : (
+                <img
+                  src={p.imgSrc?.startsWith('assets/') ? `/${p.imgSrc}` : p.imgSrc}
+                  alt={p.title}
+                  width="360"
+                  height="225"
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  loading={idx < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  onerror="this.style.display='none'"
+                />
+              )}
             </div>
             <div class="p-5 flex flex-col gap-3 flex-1">
               <h3 class="text-[15px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
