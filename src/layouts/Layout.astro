@@ -1,9 +1,20 @@
 ---
 import '../styles/globals.css';
 import StarField from '../components/StarField.astro';
-const { title, description, locale = 'en' } = Astro.props;
+const { title, description, locale = 'en', canonical, ogImage = '/assets/shajman_github.webp' } = Astro.props;
 const dir = locale === 'ar' ? 'rtl' : 'ltr';
 const lang = locale;
+const site = 'https://shajmanfaiz.github.io';
+const canonicalURL = canonical || new URL(Astro.url.pathname, site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Shajman Faiz",
+  url: site,
+  jobTitle: "Full Stack Web Developer",
+  email: "mailto:shajmanfaiz@gmail.com",
+  sameAs: ["https://github.com/shajmanfaiz", "https://linkedin.com/in/shajmanfaiz/"]
+};
 ---
 <!doctype html>
 <html lang={lang} dir={dir}>
@@ -11,14 +22,43 @@ const lang = locale;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={`${site}/`} />
+    <link rel="alternate" hreflang="ar" href={`${site}/ar/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}/`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, site).toString()} />
+    <meta property="og:locale" content={locale === 'ar' ? 'ar_SA' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, site).toString()} />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline></script>
   </head>
   <body data-theme="light">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <StarField />
     <slot />
+    <style>
+      .skip-link {
+        position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+      }
+      .skip-link:focus {
+        left: 1rem; top: 1rem; width: auto; height: auto; padding: 0.5rem 1rem;
+        background: var(--fg); color: var(--bg); border-radius: 999px; z-index: 100;
+        font-size: 0.875rem; font-weight: 600;
+      }
+    </style>
     <script is:inline>
       // init theme before paint (prevent flash)
       (function() {

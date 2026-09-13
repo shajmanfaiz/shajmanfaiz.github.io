@@ -28,25 +28,38 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
     </div>
   </div>
 
-  <div class="marquee" role="region" aria-label={t.projectsTitle}>
+  <div class="marquee" role="region" aria-label={t.projectsTitle} aria-roledescription="carousel">
     <div class="marquee-track" style={`--marquee-duration: ${Math.max(20, projects.length * 6)}s; animation-direction: ${isAr ? 'reverse' : 'normal'}`}>
-      {doubled.map((p, idx) => (
-        <article class="mono-card rounded-2xl overflow-hidden flex flex-col group shrink-0 w-[300px] sm:w-[340px] md:w-[360px]" aria-hidden={idx >= projects.length ? 'true' : undefined}>
-          <div class="aspect-[16/10] w-full overflow-hidden bg-[var(--bg-3)] border-b" style="border-color: var(--border)">
-            <img src={p.imgSrc?.startsWith('assets/') ? `/${p.imgSrc}` : p.imgSrc} alt={p.title} class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy" onerror="this.style.display='none'" />
-          </div>
-          <div class="p-5 flex flex-col gap-3 flex-1">
-            <h3 class="text-[15px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
-            <p class="text-[13px] leading-6 line-clamp-3" style="color: var(--fg-2)">{p.description}</p>
-            <div class="flex gap-2 mt-auto pt-2">
-              <a href={p.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border hover:opacity-80 transition-opacity" style="border-color: var(--fg); background: var(--fg); color: var(--bg)">{isAr ? 'عرض' : 'View'} <span>↗</span></a>
-              {p.hostedUrl && p.hostedUrl !== p.link && (
-                <a href={p.hostedUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: transparent">Live</a>
-              )}
+      {doubled.map((p, idx) => {
+        const isClone = idx >= projects.length;
+        return (
+          <article class="mono-card rounded-2xl overflow-hidden flex flex-col group shrink-0 w-[300px] sm:w-[340px] md:w-[360px]" aria-hidden={isClone ? 'true' : undefined} inert={isClone ? true : undefined}>
+            <div class="aspect-[16/10] w-full overflow-hidden bg-[var(--bg-3)] border-b" style="border-color: var(--border)">
+              <img
+                src={p.imgSrc?.startsWith('assets/') ? `/${p.imgSrc}` : p.imgSrc}
+                alt={p.title}
+                width="360"
+                height="225"
+                class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                loading={idx < 3 ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchpriority={idx < 2 ? 'high' : 'auto'}
+                onerror="this.style.display='none'"
+              />
             </div>
-          </div>
-        </article>
-      ))}
+            <div class="p-5 flex flex-col gap-3 flex-1">
+              <h3 class="text-[15px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
+              <p class="text-[13px] leading-6 line-clamp-3" style="color: var(--fg-2)">{p.description}</p>
+              <div class="flex gap-2 mt-auto pt-2">
+                <a href={p.link} target="_blank" rel="noopener noreferrer" tabindex={isClone ? '-1' : undefined} aria-hidden={isClone ? 'true' : undefined} class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border hover:opacity-80 transition-opacity" style="border-color: var(--fg); background: var(--fg); color: var(--bg)">{isAr ? 'عرض' : 'View'} <span aria-hidden="true">↗</span></a>
+                {p.hostedUrl && p.hostedUrl !== p.link && (
+                  <a href={p.hostedUrl} target="_blank" rel="noopener noreferrer" tabindex={isClone ? '-1' : undefined} aria-hidden={isClone ? 'true' : undefined} class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: transparent">Live</a>
+                )}
+              </div>
+            </div>
+          </article>
+        );
+      })}
     </div>
   </div>
 </section>

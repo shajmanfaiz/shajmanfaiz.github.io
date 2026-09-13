@@ -80,21 +80,21 @@
     },
     {
       "title": "سفاري بايت — منصة مستقلة",
-      "imgSrc": "assets/estore.png",
+      "imgSrc": "assets/estore.webp",
       "description": "موقع خدمات مستقلة — Next.js + TypeScript مع قوائم خدمات وتدفقات تواصل وواجهة أحادية اللون.",
       "link": "https://shajmanfaiz.github.io/safaribyte",
       "hostedUrl": "https://shajmanfaiz.github.io/safaribyte"
     },
     {
       "title": "Job Hunter AI",
-      "imgSrc": "assets/v80.jpg",
+      "imgSrc": "assets/v80.webp",
       "description": "أتمتة بايثون تبحث عن الوظائف حسب العنوان وترسل رسائل بريد وواتساب مخصصة مع السيرة الذاتية.",
       "link": "https://github.com/shajmanfaiz/job-hunter-ai",
       "hostedUrl": "https://github.com/shajmanfaiz/job-hunter-ai"
     },
     {
       "title": "منشئ السيرة ATS",
-      "imgSrc": "assets/donation.jpg",
+      "imgSrc": "assets/donation.webp",
       "description": "أداة لإنشاء سيرة ذاتية متوافقة مع ATS — تولّد ملفات PDF نظيفة وجاهزة للتوظيف.",
       "link": "https://github.com/shajmanfaiz/ats-resume",
       "hostedUrl": "https://github.com/shajmanfaiz/ats-resume"

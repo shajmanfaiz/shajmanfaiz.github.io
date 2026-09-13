@@ -10,29 +10,29 @@ const isArabic = locale === 'ar';
   style="background-color: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--border);"
 >
   <div class="container-narrow flex items-center justify-between h-[56px]">
-    <a href={isArabic ? '/ar/' : '/'} class="flex items-center gap-3 no-underline">
-      <span class="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold tracking-widest" style="background: var(--fg); color: var(--bg)">SF</span>
+    <a href={isArabic ? '/ar/' : '/'} class="flex items-center gap-3 no-underline" aria-label={`${t.name} home`}>
+      <span class="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold tracking-widest" style="background: var(--fg); color: var(--bg)" aria-hidden="true">SF</span>
       <span class="hidden sm:block text-sm font-semibold tracking-tight" style="color: var(--fg)">{t.name}</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6">
-      <button data-scroll="hero" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[0]?.title || 'Home'}</button>
-      <button data-scroll="about" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[1]?.title || 'About'}</button>
-      <button data-scroll="projects" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[2]?.title || 'Projects'}</button>
-      <button data-scroll="contact" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[3]?.title || 'Contact'}</button>
+    <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
+      <button type="button" data-scroll="hero" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[0]?.title || 'Home'}</button>
+      <button type="button" data-scroll="about" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[1]?.title || 'About'}</button>
+      <button type="button" data-scroll="projects" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[2]?.title || 'Projects'}</button>
+      <button type="button" data-scroll="contact" class="text-[13px] font-medium bg-transparent border-0 cursor-pointer hover:opacity-60 transition-opacity" style="color: var(--fg-2)">{t.navLinks[3]?.title || 'Contact'}</button>
     </nav>
 
     <div class="flex items-center gap-2">
-      <div class="flex rounded-full p-0.5" style="border: 1px solid var(--border); background: var(--bg-2)">
-        <a href="/" class={`px-3 py-1 rounded-full text-[11px] font-bold tracking-widest transition-colors ${!isArabic ? 'is-active' : ''}`} data-lang-btn="en" style={!isArabic ? 'background: var(--fg); color: var(--bg)' : 'color: var(--fg-2)'}>EN</a>
-        <a href="/ar/" class={`px-3 py-1 rounded-full text-[11px] font-bold tracking-widest transition-colors ${isArabic ? 'is-active' : ''}`} data-lang-btn="ar" style={isArabic ? 'background: var(--fg); color: var(--bg)' : 'color: var(--fg-2)'}>AR</a>
+      <div class="flex rounded-full p-0.5" style="border: 1px solid var(--border); background: var(--bg-2)" role="group" aria-label="Language">
+        <a href="/" hreflang="en" aria-current={!isArabic ? 'page' : undefined} class={`px-3 py-1 rounded-full text-[11px] font-bold tracking-widest transition-colors ${!isArabic ? 'is-active' : ''}`} data-lang-btn="en" style={!isArabic ? 'background: var(--fg); color: var(--bg)' : 'color: var(--fg-2)'}>EN</a>
+        <a href="/ar/" hreflang="ar" aria-current={isArabic ? 'page' : undefined} class={`px-3 py-1 rounded-full text-[11px] font-bold tracking-widest transition-colors ${isArabic ? 'is-active' : ''}`} data-lang-btn="ar" style={isArabic ? 'background: var(--fg); color: var(--bg)' : 'color: var(--fg-2)'}>AR</a>
       </div>
 
-      <button id="theme-toggle" aria-label="Toggle theme" class="w-9 h-9 rounded-full flex items-center justify-center border cursor-pointer transition-colors" style="background: var(--bg-2); border-color: var(--border); color: var(--fg)">
-        <span class="icon-sun">
+      <button type="button" id="theme-toggle" aria-label="Toggle theme" class="w-9 h-9 rounded-full flex items-center justify-center border cursor-pointer transition-colors" style="background: var(--bg-2); border-color: var(--border); color: var(--fg)">
+        <span class="icon-sun" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
         </span>
-        <span class="icon-moon hidden">
+        <span class="icon-moon hidden" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </span>
       </button>
