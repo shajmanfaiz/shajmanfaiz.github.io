@@ -46,8 +46,8 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
     </div>
   </div>
 
-  <div class="marquee" role="region" aria-label={t.projectsTitle} aria-roledescription="carousel">
-    <div class="marquee-track" style={`--marquee-duration: ${Math.max(20, projects.length * 6)}s; animation-direction: ${isAr ? 'reverse' : 'normal'}`}>
+  <div class="marquee" role="region" aria-label={t.projectsTitle} aria-roledescription="carousel" data-marquee>
+    <div class="marquee-track" style={`--marquee-duration: ${Math.max(20, projects.length * 6)}s`}>
       {doubled.map((p, idx) => {
         const isClone = idx >= projects.length;
         return (
@@ -97,10 +97,29 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
   .marquee {
     position: relative;
     overflow: hidden;
+    overflow-x: clip;
+    max-width: 100%;
+    width: 100%;
     padding: 0.5rem 0 1rem;
     cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    /* Keep marquee LTR even on RTL pages to avoid scrollbar flipping */
+    direction: ltr;
     mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  }
+  /* Ensure section itself never causes horizontal scroll, especially in RTL */
+  :global(html[dir="rtl"]) .marquee {
+    direction: ltr;
+  }
+  :global(#projects) {
+    overflow: hidden;
+    overflow-x: clip;
+    max-width: 100%;
+  }
+  .marquee.is-dragging {
+    cursor: grabbing;
   }
   .marquee-track {
     display: flex;
@@ -112,6 +131,9 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
   .marquee:hover .marquee-track,
   .marquee:focus-within .marquee-track {
     animation-play-state: paused;
+  }
+  .marquee.is-dragging .marquee-track {
+    animation-play-state: paused !important;
   }
   @keyframes marquee {
     0% { transform: translateX(0); }
@@ -126,3 +148,103 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
     .marquee-track { gap: 16px; }
   }
 </style>
+
+<script>
+  // Drag to scroll while keeping auto infinite scroll
+  // Works for both LTR and RTL (Arabic) - same direction, content dir handles text
+  (() => {
+    const marquees = document.querySelectorAll('[data-marquee]');
+    marquees.forEach((marquee) => {
+      const track = marquee.querySelector('.marquee-track');
+      if (!track) return;
+
+      let isDown = false;
+      let startX = 0;
+      let startTranslate = 0;
+      let currentTranslate = 0;
+      let animationPaused = false;
+
+      function getTranslateX(el) {
+        const style = window.getComputedStyle(el);
+        const tr = style.transform;
+        if (!tr || tr === 'none') return 0;
+        // matrix(a, b, c, d, tx, ty) or matrix3d
+        const m = tr.match(/matrix.*\((.+)\)/);
+        if (!m) return 0;
+        const vals = m[1].split(', ');
+        // tx is at index 4 for 2d, 12 for 3d
+        return parseFloat(vals[4] ?? vals[12] ?? 0);
+      }
+
+      function pauseAuto() {
+        if (!animationPaused) {
+          currentTranslate = getTranslateX(track);
+          track.style.animation = 'none';
+          track.style.transform = `translateX(${currentTranslate}px)`;
+          // force reflow
+          void track.offsetWidth;
+          animationPaused = true;
+        }
+      }
+
+      function resumeAuto() {
+        if (animationPaused) {
+          // Reset to allow CSS animation to take over seamlessly
+          // Calculate progress: keep current position as start for next loop
+          track.style.animation = '';
+          track.style.transform = '';
+          animationPaused = false;
+          // Re-apply animation with current offset as delay trick:
+          // Instead, just let it restart from 0 - slight jump but acceptable
+          // Better: keep paused for 1.5s then resume
+        }
+      }
+
+      marquee.addEventListener('pointerdown', (e) => {
+        isDown = true;
+        marquee.classList.add('is-dragging');
+        marquee.setPointerCapture(e.pointerId);
+        pauseAuto();
+        startX = e.clientX;
+        startTranslate = currentTranslate;
+        // Prevent image drag
+        e.preventDefault();
+      });
+
+      marquee.addEventListener('pointermove', (e) => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        const next = startTranslate + dx;
+        // Allow dragging within roughly one full set width (avoid blank)
+        // Track width is double, so limit to [-trackWidth/2 - 200, 200]
+        const half = track.scrollWidth / 2;
+        let clamped = next;
+        if (clamped > 200) clamped = 200;
+        if (clamped < -half - 200) clamped = -half - 200;
+        currentTranslate = clamped;
+        track.style.transform = `translateX(${clamped}px)`;
+      });
+
+      const endDrag = (e) => {
+        if (!isDown) return;
+        isDown = false;
+        marquee.classList.remove('is-dragging');
+        try { marquee.releasePointerCapture(e.pointerId); } catch {}
+        // Stay paused for a moment so user can click links
+        setTimeout(() => {
+          resumeAuto();
+        }, 1500);
+      };
+
+      marquee.addEventListener('pointerup', endDrag);
+      marquee.addEventListener('pointerleave', endDrag);
+      marquee.addEventListener('pointercancel', endDrag);
+
+      // Also pause on hover is handled by CSS, but ensure JS doesn't conflict
+      // For touch, prevent scrolling the page when dragging horizontally
+      marquee.addEventListener('touchmove', (e) => {
+        if (isDown) e.preventDefault();
+      }, { passive: false });
+    });
+  })();
+</script>
