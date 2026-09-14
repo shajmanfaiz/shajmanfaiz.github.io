@@ -41,7 +41,7 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
     <div class="flex flex-wrap items-end justify-between gap-4 mb-8" style={`direction: ${isAr ? 'rtl' : 'ltr'}`}>
       <div>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight" style="color: var(--fg)">{t.projectsTitle}</h2>
-        <p class="text-sm mt-2" style="color: var(--fg-2)">{t.projectsSubtitle}</p>
+        <p class="text-[15px] md:text-[16px] mt-2" style="color: var(--fg-2)">{t.projectsSubtitle}</p>
       </div>
     </div>
   </div>
@@ -77,8 +77,8 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
               )}
             </div>
             <div class="p-5 flex flex-col gap-3 flex-1">
-              <h3 class="text-[15px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
-              <p class="text-[13px] leading-6 line-clamp-3" style="color: var(--fg-2)">{p.description}</p>
+              <h3 class="text-[16px] md:text-[17px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
+              <p class="text-[14px] md:text-[15px] leading-6 md:leading-7 line-clamp-3" style="color: var(--fg-2)">{p.description}</p>
               <div class="flex gap-2 mt-auto pt-2">
                 <a href={p.link} target="_blank" rel="noopener noreferrer" tabindex={isClone ? '-1' : undefined} aria-hidden={isClone ? 'true' : undefined} class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border hover:opacity-80 transition-opacity" style="border-color: var(--fg); background: var(--fg); color: var(--bg)">{isAr ? 'عرض' : 'View'} <span aria-hidden="true">↗</span></a>
                 {p.hostedUrl && p.hostedUrl !== p.link && (

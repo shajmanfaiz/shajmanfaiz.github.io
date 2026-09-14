@@ -13,6 +13,7 @@ const isAr = locale === 'ar';
           {t.name}
           <span class="block text-[1.1rem] md:text-[1.25rem] font-medium tracking-tight mt-3" style="color: var(--fg-2)">{t.position}</span>
         </h1>
+        <p class="max-w-[60ch] text-[16px] md:text-[17px] leading-7 md:leading-8 mb-8" style="color: var(--fg-2)">{t.summary}</p>
         <div class="flex flex-wrap gap-3 mb-8">
           <a href={`mailto:${t.email}`} class="btn-invert">{t.contactButtonText} <span aria-hidden>→</span></a>
           <a href={t.resumeLink} target="_blank" rel="noopener noreferrer" class="btn-ghost">{t.resumeButtonText}</a>

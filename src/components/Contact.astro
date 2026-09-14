@@ -7,7 +7,7 @@ const t = data(locale);
   <div class="container-narrow">
     <div class="mono-card rounded-[24px] p-8 md:p-12 text-center" style="background: var(--bg); color: var(--fg); border-color: var(--fg)">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3" style="color: var(--fg)">{t.contactTitle}</h2>
-      <p class="max-w-xl mx-auto text-sm leading-6 opacity-70 mb-8">{t.contactDescription}</p>
+      <p class="max-w-xl mx-auto text-[15px] md:text-[16px] leading-6 md:leading-7 opacity-70 mb-8">{t.contactDescription}</p>
       <div class="flex flex-wrap justify-center gap-3 mb-8">
         <a href={`mailto:${t.email}`} class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold" style="background: var(--fg); color: var(--bg)">{t.sayHelloButton} <span>→</span></a>
         <a href={t.resumeLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border" style="background: var(--bg); color: var(--fg)">{t.resumeButtonText}</a>

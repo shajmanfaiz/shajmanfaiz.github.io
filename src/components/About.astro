@@ -9,29 +9,29 @@ const isAr = locale === 'ar';
     <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-10 items-start">
       <div class="max-w-3xl" style={`direction: ${isAr ? 'rtl' : 'ltr'}`}>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4" style="color: var(--fg)">{t.aboutTitle}</h2>
-        <p class="text-[15px] leading-7" style="color: var(--fg-2)">{t.summary}</p>
-        <blockquote class="text-sm italic border-l-2 pl-3 py-1 mt-6" style="border-color: var(--fg); color: var(--fg-2)">“{t.quote}”</blockquote>
+        <p class="text-[16px] md:text-[17px] leading-7 md:leading-8" style="color: var(--fg-2)">{t.summary}</p>
+        <blockquote class="text-[15px] md:text-[16px] italic border-l-2 pl-3 py-1 mt-6" style="border-color: var(--fg); color: var(--fg-2)">“{t.quote}”</blockquote>
       </div>
       <div class="mono-card rounded-2xl p-6 md:p-7" style="background: var(--bg-2)">
         <div class="space-y-5">
           <div>
-            <p class="text-sm font-semibold mb-2" style="color: var(--fg)">{isAr ? 'أعمل بـ' : 'I work with'}</p>
+            <p class="text-[15px] font-semibold mb-2" style="color: var(--fg)">{isAr ? 'أعمل بـ' : 'I work with'}</p>
             <div class="flex flex-wrap gap-1.5">
               {['React','Next.js','Python','FastAPI','TypeScript','Node.js'].map((s) => (
-                <span class="text-xs px-2.5 py-1 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: var(--bg)">{s}</span>
+                <span class="text-[13px] px-2.5 py-1 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: var(--bg)">{s}</span>
               ))}
             </div>
           </div>
           <div>
-            <p class="text-sm font-semibold mb-2" style="color: var(--fg)">{isAr ? 'الميكانيكا والعمليات' : 'Mechanical & Operations'}</p>
+            <p class="text-[15px] font-semibold mb-2" style="color: var(--fg)">{isAr ? 'الميكانيكا والعمليات' : 'Mechanical & Operations'}</p>
             <div class="flex flex-wrap gap-1.5">
               {['Coating Operations','Surface Preparation','Corrosion Protection','Quality Control','Industrial Standards Compliance'].map((s) => (
-                <span class="text-xs px-2.5 py-1 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: var(--bg)">{s}</span>
+                <span class="text-[13px] px-2.5 py-1 rounded-full border" style="border-color: var(--border); color: var(--fg-2); background: var(--bg)">{s}</span>
               ))}
             </div>
           </div>
-          <blockquote class="text-sm italic border-l-2 pl-3 py-1" style="border-color: var(--fg); color: var(--fg-2)">“{t.quote}”</blockquote>
-          <p class="text-xs leading-5" style="color: var(--fg-3)">{isAr ? 'التفاصيل الكاملة في السيرة الذاتية.' : 'Full details in resume.'}</p>
+          <blockquote class="text-[15px] italic border-l-2 pl-3 py-1" style="border-color: var(--fg); color: var(--fg-2)">“{t.quote}”</blockquote>
+          <p class="text-[13px] leading-5" style="color: var(--fg-3)">{isAr ? 'التفاصيل الكاملة في السيرة الذاتية.' : 'Full details in resume.'}</p>
         </div>
       </div>
     </div>
