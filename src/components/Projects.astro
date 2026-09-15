@@ -78,7 +78,15 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
             </div>
             <div class="p-5 flex flex-col gap-3 flex-1">
               <h3 class="text-[16px] md:text-[17px] font-semibold leading-tight" style="color: var(--fg)">{p.title}</h3>
-              <p class="text-[14px] md:text-[15px] leading-6 md:leading-7 line-clamp-3" style="color: var(--fg-2)">{p.description}</p>
+              <p class="text-[14px] md:text-[15px] leading-6 md:leading-7 line-clamp-2" style="color: var(--fg-2)">{p.description}</p>
+              {p.technologies && p.technologies.length > 0 && (
+                <div class="flex flex-wrap gap-1.5">
+                  {p.technologies.slice(0,4).map((tech) => (
+                    <span class="text-[10px] font-semibold px-2 py-1 rounded-full border" style="border-color: var(--border); color: var(--fg-3); background: var(--bg-2)">{tech}</span>
+                  ))}
+                  {p.technologies.length > 4 && <span class="text-[10px] px-2 py-1" style="color: var(--fg-3)">+{p.technologies.length - 4}</span>}
+                </div>
+              )}
               <div class="flex gap-2 mt-auto pt-2">
                 <a href={p.link} target="_blank" rel="noopener noreferrer" tabindex={isClone ? '-1' : undefined} aria-hidden={isClone ? 'true' : undefined} class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border hover:opacity-80 transition-opacity" style="border-color: var(--fg); background: var(--fg); color: var(--bg)">{isAr ? 'عرض' : 'View'} <span aria-hidden="true">↗</span></a>
                 {p.hostedUrl && p.hostedUrl !== p.link && (
@@ -150,8 +158,7 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
 </style>
 
 <script>
-  // Drag to scroll while keeping auto infinite scroll
-  // Works for both LTR and RTL (Arabic) - same direction, content dir handles text
+  // Fixed drag: no snap-back to first project. Resumes smoothly from dragged offset via negative animation-delay.
   (() => {
     const marquees = document.querySelectorAll('[data-marquee]');
     marquees.forEach((marquee) => {
@@ -159,20 +166,23 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
       if (!track) return;
 
       let isDown = false;
+      let hasDragged = false;
       let startX = 0;
       let startTranslate = 0;
       let currentTranslate = 0;
       let animationPaused = false;
 
+      // respect reduced-motion
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
       function getTranslateX(el) {
         const style = window.getComputedStyle(el);
         const tr = style.transform;
         if (!tr || tr === 'none') return 0;
-        // matrix(a, b, c, d, tx, ty) or matrix3d
         const m = tr.match(/matrix.*\((.+)\)/);
         if (!m) return 0;
         const vals = m[1].split(', ');
-        // tx is at index 4 for 2d, 12 for 3d
         return parseFloat(vals[4] ?? vals[12] ?? 0);
       }
 
@@ -181,46 +191,58 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
           currentTranslate = getTranslateX(track);
           track.style.animation = 'none';
           track.style.transform = `translateX(${currentTranslate}px)`;
-          // force reflow
           void track.offsetWidth;
           animationPaused = true;
         }
       }
 
       function resumeAuto() {
-        if (animationPaused) {
-          // Reset to allow CSS animation to take over seamlessly
-          // Calculate progress: keep current position as start for next loop
+        if (!animationPaused) return;
+        const half = track.scrollWidth / 2;
+        if (half <= 0) {
           track.style.animation = '';
           track.style.transform = '';
           animationPaused = false;
-          // Re-apply animation with current offset as delay trick:
-          // Instead, just let it restart from 0 - slight jump but acceptable
-          // Better: keep paused for 1.5s then resume
+          return;
         }
+        const style = getComputedStyle(track);
+        const durStr = style.getPropertyValue('--marquee-duration') || '40s';
+        const duration = parseFloat(durStr) || 40;
+        // normalize offset to 0..half
+        let norm = ((-currentTranslate % half) + half) % half;
+        const progress = norm / half; // 0..1
+        const delay = -progress * duration;
+        track.style.transform = '';
+        track.style.animation = 'none';
+        void track.offsetWidth;
+        track.style.animation = `marquee ${duration}s linear infinite`;
+        track.style.animationDelay = `${delay}s`;
+        animationPaused = false;
+        hasDragged = false;
       }
 
       marquee.addEventListener('pointerdown', (e) => {
+        // only left button / touch
+        if (e.button !== undefined && e.button !== 0) return;
         isDown = true;
+        hasDragged = false;
         marquee.classList.add('is-dragging');
-        marquee.setPointerCapture(e.pointerId);
+        try { marquee.setPointerCapture(e.pointerId); } catch {}
         pauseAuto();
         startX = e.clientX;
         startTranslate = currentTranslate;
-        // Prevent image drag
         e.preventDefault();
       });
 
       marquee.addEventListener('pointermove', (e) => {
         if (!isDown) return;
         const dx = e.clientX - startX;
+        if (Math.abs(dx) > 5) hasDragged = true;
         const next = startTranslate + dx;
-        // Allow dragging within roughly one full set width (avoid blank)
-        // Track width is double, so limit to [-trackWidth/2 - 200, 200]
         const half = track.scrollWidth / 2;
         let clamped = next;
-        if (clamped > 200) clamped = 200;
-        if (clamped < -half - 200) clamped = -half - 200;
+        if (clamped > 180) clamped = 180;
+        if (clamped < -half - 180) clamped = -half - 180;
         currentTranslate = clamped;
         track.style.transform = `translateX(${clamped}px)`;
       });
@@ -230,18 +252,26 @@ const doubled = [...projects, ...projects]; // CSS seamless needs double - hidde
         isDown = false;
         marquee.classList.remove('is-dragging');
         try { marquee.releasePointerCapture(e.pointerId); } catch {}
-        // Stay paused for a moment so user can click links
+        // if we dragged, suppress next click on links (avoid accidental navigation while dragging)
+        if (hasDragged) {
+          const handler = (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            marquee.removeEventListener('click', handler, true);
+          };
+          marquee.addEventListener('click', handler, true);
+          setTimeout(() => marquee.removeEventListener('click', handler, true), 0);
+        }
+        // keep position for 1.2s to allow clicking, then resume smoothly
         setTimeout(() => {
           resumeAuto();
-        }, 1500);
+        }, 1200);
       };
 
       marquee.addEventListener('pointerup', endDrag);
       marquee.addEventListener('pointerleave', endDrag);
       marquee.addEventListener('pointercancel', endDrag);
 
-      // Also pause on hover is handled by CSS, but ensure JS doesn't conflict
-      // For touch, prevent scrolling the page when dragging horizontally
       marquee.addEventListener('touchmove', (e) => {
         if (isDown) e.preventDefault();
       }, { passive: false });

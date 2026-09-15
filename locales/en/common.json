@@ -56,6 +56,7 @@
       "title": "Nexaflow Engineering",
       "imgSrc": "assets/nexaflowengg_website.webp",
       "description": "Corporate website for an electronic trading firm — built with Next.js, optimized images, clean routing and SEO.",
+      "technologies": ["Next.js", "React", "Tailwind CSS", "TypeScript","Custom Email"],
       "link": "https://www.nexafloweng.com",
       "hostedUrl": "https://www.nexafloweng.com"
     },
@@ -63,6 +64,7 @@
       "title": "Company Website Revamp (Iotics)",
       "imgSrc": "assets/iotics.webp",
       "description": "Revamped the official Iotics website using Next.js with optimized images, better routing, improved SEO, and faster load times.",
+      "technologies": ["Next.js", "React" ],
       "link": "https://www.iotics.me",
       "hostedUrl": "https://www.iotics.me"
     },
@@ -70,6 +72,7 @@
       "title": "Sammach Restaurant",
       "imgSrc": "assets/samamch_binhendi.webp",
       "description": "Modern landing page for Sammach Restaurant under the Binhendi Group — responsive, lightweight, and brand-focused.",
+      "technologies": ["Laravel", "PHP", "MySQL", "jQuery"],
       "link": "https://binhendi.com/brands/sammach/",
       "hostedUrl": "https://binhendi.com/brands/sammach/"
     },
@@ -77,6 +80,7 @@
       "title": "GitHub Portfolio",
       "imgSrc": "assets/shajman_github.webp",
       "description": "Portfolio showcasing web development projects using React, Next.js, REST APIs, UI design, and automation scripts.",
+      "technologies": [],
       "link": "https://shajmanfaiz.github.io",
       "hostedUrl": "https://shajmanfaiz.github.io"
     },
@@ -84,6 +88,7 @@
       "title": "SafariByte — Freelance Platform",
       "imgSrc": "assets/safaribyte_website.webp",
       "description": "Independent freelance services site — Next.js + TypeScript with service listings, contact flows, and clean monochrome UI.",
+      "technologies": ["Astro.js", "TypeScript", "Tailwind CSS", "React"],
       "link": "https://shajmanfaiz.github.io/safaribyte",
       "hostedUrl": "https://shajmanfaiz.github.io/safaribyte"
     },
@@ -91,6 +96,7 @@
       "title": "Job Hunter AI",
       "imgSrc": "assets/job_hunter_ai_app.webp",
       "description": "Python automation that scrapes jobs by title and sends tailored emails & WhatsApp messages with resume — scheduled & configurable.",
+      "technologies": ["Python", "Automation", "SMTP", "WhatsApp API","Cron Jobs"],
       "link": "https://github.com/shajmanfaiz/job-hunter-ai",
       "hostedUrl": "https://github.com/shajmanfaiz/job-hunter-ai"
     },
@@ -98,6 +104,7 @@
       "title": "ATS Resume Builder",
       "imgSrc": "assets/ats_resume_app.webp",
       "description": "ATS-friendly resume maker with minimal customization — generates clean, recruiter-ready PDFs from structured data.",
+      "technologies": ["TypeScript", "Tailwind CSS", "PDF Gen", "React"],
       "link": "https://github.com/shajmanfaiz/ats-resume",
       "hostedUrl": "https://github.com/shajmanfaiz/ats-resume"
     }
